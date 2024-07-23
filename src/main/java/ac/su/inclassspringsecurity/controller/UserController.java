@@ -25,6 +25,13 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import org.springframework.web.bind.annotation.RequestMethod;//추가된 import 문 
+import org.springframework.ui.Model; //추가된 import 문 
+import jakarta.xml.bind.DatatypeConverter;// 추가된 import 문
+import java.security.MessageDigest;// 추가된 import 문
+import java.security.NoSuchAlgorithmException; // 추가된 import 문
+import org.springframework.web.bind.annotation.PathVariable; // 추가된 import 문
+
 import java.util.ArrayList;
 import java.util.List;
 
