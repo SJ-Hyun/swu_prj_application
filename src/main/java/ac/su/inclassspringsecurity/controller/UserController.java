@@ -161,4 +161,29 @@ public class UserController {
         model.addAttribute("pageSize", size);
         return "users/users-list";
     }
+
+
+      @RequestMapping(value = "/cpubound/{input}", method = RequestMethod.GET)
+    public String getDigest(@PathVariable("input") String input, Model model) throws NoSuchAlgorithmException {
+        for (int i = 0; i < 100_000; i++) {
+            input = getMD5Digest(input);
+        }
+        model.addAttribute("result", input); 
+        return "cpubound_form";  
+    }
+
+    
+
+    private String getMD5Digest(String input) throws NoSuchAlgorithmException {
+        MessageDigest md = MessageDigest.getInstance("MD5");
+        md.update(input.getBytes());
+        byte[] digest = md.digest();
+        return DatatypeConverter.printHexBinary(digest).toUpperCase();
+
+        // String myHash = DatatypeConverter
+        //         .printHexBinary(digest).toUpperCase();
+
+        // return myHash;
+    }
+
 }
