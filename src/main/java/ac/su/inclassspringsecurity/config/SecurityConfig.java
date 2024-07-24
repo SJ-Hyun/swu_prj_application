@@ -67,7 +67,7 @@ public class SecurityConfig {
                     new AntPathRequestMatcher("/api/**")
                     , new AntPathRequestMatcher("/users/login")
                     , new AntPathRequestMatcher("/signup")
-                    //, new AntPathRequestMatcher("/products")
+                    , new AntPathRequestMatcher("/products")
                 )
             )
 //                (csrf) ->
